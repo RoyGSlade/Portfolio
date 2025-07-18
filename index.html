@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Back To Basics</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="dist/styles.css">
+        <!---fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+ <body>
+    <div class="textbackground" class="saira-fonts">
+        <header>
+        <h1 id="MainHeader">The Basics</h1>
+        <p id="summaryStuff">I want to set up a portfolio this is my entire journey on my own webpage relearning html js and styles</p>
+        </header>
+
+        <!---Book Preview Modal Trigger -->
+        <button class="custom" id="InfiniteAgesGenesis"><span>Infinite Ages Genesis Book</span></button>
+
+        <!--modal structure-->
+    <div id="bookPdfModal" class="modal">
+        <div id="modalContent" class="modal-content">
+            <span class="close-btn">&times;</span>
+            <button class="custom" id="downloadContent"><span>Download</span></button>
+            <iframe id="pdfViewer" frameborder="0"></iframe>
+        </div>
+    </div>
+
+
+<div class="videosGames">
+        <div class="videos" id="youtube">
+            <div class="carousel-wrapper">
+                <div class="carousel-controls">
+                <button class="custom" id="ytPrev">&#8592;</button>
+                <span id="ytTitle"></span>
+                <button class="custom" id="ytNext">&#8594;</button>
+                </div>
+                <div id="ytVideo"></div>
+            </div>
+        </div>
+        <div class="games" id="gameslist">
+            <div class="carousel-wrapper">
+               
+                <div id="minigame"></div>
+            </div>
+        </div>
+</div>
+
+</div>
+
+
+    <script src="main.js"></script>
+
+
+ </body>
+</html>
