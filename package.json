@@ -1,24 +1,18 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
-  "description": "going back and review frontend design",
-  "main": "main.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RoyGSlade/Portfolio.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RoyGSlade/Portfolio/issues"
-  },
-  "homepage": "https://github.com/RoyGSlade/Portfolio#readme",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.11",
+    "vite": "^7.0.4"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
     "tailwindcss": "^4.1.11"
   }
 }

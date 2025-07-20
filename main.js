@@ -8,13 +8,34 @@ const closeBtn = document.querySelector('.close-btn')
 const pdfViewer = document.getElementById('pdfViewer')
 const downloadBtn = document.getElementById('downloadContent')
 const modalContent = document.getElementById('modalContent');
+const pdfContainer = document.getElementById('pdfContainer');
 //Pdf to show
 const previewPdfPath = 'data/InfiniteAgesGenesis.pdf'
+
+// check if mobile 
+function isMobileDevice() {
+  return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+}
+function handlePdfPreview() {
+  const isMobile = isMobileDevice();
+  const msg = document.getElementById('pdfMobileMsg');
+
+  if (isMobile) {
+    pdfViewer.style.display = 'none';
+    msg.style.display = 'block';
+    msg.innerText = 'Sorry, preview unavailable on mobile.';
+  } else {
+    pdfViewer.style.display = 'block';
+    msg.style.display = 'none';
+    pdfViewer.src = previewPath;
+  }
+}
+
+
 
 // to open modal 
 openModalBtn.addEventListener('click', () =>  {
     modal.style.display = 'block';
-    modalContent.style.display = 'flex';
     openModalBtn.style.display = 'none';
     pdfViewer.src = previewPdfPath;
 });
@@ -26,12 +47,12 @@ closeBtn.addEventListener('click', () => {
     pdfViewer.src = '';
 });
 
-/*downloadBtn.addEventListener('click', () =>{
+downloadBtn.addEventListener('click', () =>{
 const link = document.createElement('a');
 link.href = previewPdfPath;
 link.download = 'InfiniteAgesGenesis.pdf';
 link.click();
-});*/
+});
 
 const youtubeVideos = [
     {id:'9sy4PtkokEs', title:'Chapter 1: Midnight Drive'},
