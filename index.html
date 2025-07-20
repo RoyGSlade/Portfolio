@@ -34,6 +34,164 @@
       font-size: 2.2rem;
       margin-bottom: .25em;
     }
+
+
+        .Label-Container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: center;
+      height: calc(100% - -5px);
+      column-gap: 25px;
+      /* margin-top: 2px;*/
+    }
+
+    .label {
+      color: #14e4ff;
+      text-shadow: 0 0 5px #13c9c0, 0 0 10px #0099ff;
+      font-size: larger;
+      margin-bottom: 10px;
+      background: linear-gradient(to bottom, #1b2735, #090a0f);
+      background-image: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      background-clip: padding-box;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      padding: 5px;
+      border: 1px solid #05c6f7;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #14f7ff;
+     }
+    .Clockheader {
+      justify-content: center;
+      display: grid;
+      align-content: center;
+      margin: 3% 3% 3% 3%;
+      }
+
+    .clock {
+      height: 200px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to bottom, #1b2735, #090a0f);
+      background-image: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      background-clip: padding-box;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid #14dcff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #4ec3fa;
+      margin: 1px 80px 80px 80px;
+    }
+
+    .digit {
+      width:120px;
+      height:200px;
+      margin:0 5px;
+      position:relative;
+      display:inline-block;
+    }
+
+    .digit .segment {
+      background:#14e4ff;
+      border-radius:5px;
+      position:absolute;
+      opacity:0.15;
+      transition:opacity 0.2s;
+      -webkit-transition:opacity 0.2s;
+      -ms-transition:opacity 0.2s;
+      -moz-transition:opacity 0.2s;
+      -o-transition:opacity 0.2s;
+    }
+
+    .digit .segment.on, .separator {
+      opacity:1;
+      box-shadow:0 0 50px #038eff;
+      transition:opacity 0s;
+      -webkit-transition:opacity 0s;
+      -ms-transition:opacity 0s;
+      -moz-transition:opacity 0s;
+      -o-transition:opacity 0s;
+    }
+
+    .separator {
+      width:20px;
+      height:20px;
+      background:#14ffff;
+      border-radius:50%;
+      display:inline-block;
+      position:relative;
+    }
+
+    .digit .segment:nth-child(1) {
+      top:10px;
+      left:20px;
+      right:20px;
+      height:10px;
+    }
+
+    .digit .segment:nth-child(2) {
+      top:20px;
+      right:10px;
+      width:10px;
+      height:75px;
+      height:calc(50% - 25px);
+    }
+
+    .digit .segment:nth-child(3) {
+      bottom:20px;
+      right:10px;
+      width:10px;
+      height:75px;
+      height:calc(50% - 25px);
+    }
+
+    .digit .segment:nth-child(4) {
+      bottom:10px;
+      right:20px;
+      height:10px;
+      left:20px;
+    }
+
+    .digit .segment:nth-child(5) {
+      bottom:20px;
+      left:10px;
+      width:10px;
+      height:75px;
+      height:calc(50% - 25px);
+    }
+
+    .digit .segment:nth-child(6) {
+      top:20px;
+      left:10px;
+      width:10px;
+      height:75px;
+      height:calc(50% - 25px);
+    }
+
+    .digit .segment:nth-child(7) {
+      bottom:95px;
+      bottom:calc(50% - 5px);
+      right:20px;
+      left:20px;
+      height:10px;
+    }
+
+
+    .clockTitle{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      color: #068899;
+      text-shadow: 0 0 5px #14f7ff, 0 0 10px #00f7ff;
+      font-size: xxx-large;
+    }
+
+
     #summaryStuff {
       font-size: 1.1rem;
     }
@@ -187,6 +345,14 @@
       min-width: 90px;
       text-align: center;
     }
+    #gmTitle {
+      background: linear-gradient(45deg, transparent 5%, #00e1ff 5%);
+      font-size: 1rem;
+      padding: 0.2em 0.7em;
+      border-radius: 0.7em;
+      min-width: 90px;
+      text-align: center;
+    }
     #ytVideo iframe, #minigame iframe {
       width: 100%;
       min-height: 170px;
@@ -204,15 +370,111 @@
   </style>
 </head>
 <body>
+  
   <div class="textbackground">
-    <header>
-      <h1 id="MainHeader">The Basics</h1>
+     <div class="Clockheader">
+        <div class="clockTitle">The Basics</div>
+        
+        <div class="Label-Container">
+            <div class="label" id="days-label">Days</div>
+            <div class="label" id="hours-label">Hours</div>
+            <div class="label" id="minutes-label">Minutes</div>
+            <div class="label" id="seconds-label">Seconds</div>
+        </div>
+        <div class="clock">
+
+            <div class="digit days" id='days_tens'>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+            </div>
+
+            <div class="digit days" id='days_ones'>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+              </div>
+            
+            <div class="separator"></div>
+            
+            <div class="digit hours" id='hours1'>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+            </div>
+          
+            <div class="digit hours" id='hours2'>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+            </div>
+          
+            <div class="separator"></div>
+          
+            <div class="digit minutes" id='minutes1' >
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+            </div>
+          
+            <div class="digit minutes" id='minutes2'>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+            </div>
+          
+            <div class="separator"></div>
+          
+            <div class="digit seconds" id='seconds1'>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+            </div>
+          
+            <div class="digit seconds" id='seconds2'>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+              <div class="segment"></div>
+            </div>
+          </div>
+      </div> 
+  
       <p id="summaryStuff">
-        I want to set up a portfolio. This is my journey, relearning HTML, JS, and styles on my own site.
+        This is a collection of my work, including games, videos, and other projects. The clock above counts down to the next game release, which is scheduled for <span id="releaseDate">July 30, 2025</span>. Click the button below to view the Infinite Ages Genesis book.
       </p>
     </header>
-
-    <button class="custom" id="InfiniteAgesGenesis"><span>Infinite Ages Genesis Book</span></button>
 
     <div id="bookPdfModal" class="modal">
       <div class="modal-content" id="pdfContainer">
@@ -236,9 +498,14 @@
           <div id="ytVideo"></div>
         </div>
       </div>
-      <div class="games" id="gameslist">
+      <div class="games" id="gamestuff">
         <div class="carousel-wrapper">
-          <div id="minigame"></div>
+          <div class="carousel-controls">
+            <button class="custom" id="gmPrev">&#8592;</button>
+            <span id="gmTitle">Games</span>
+            <button class="custom" id="gmNext">&#8594;</button>
+          </div>
+          <div id="game"><button class="custom" id="InfiniteAgesGenesis"><span>Infinite Ages Genesis Book</span></button></div>
         </div>
       </div>
     </div>
