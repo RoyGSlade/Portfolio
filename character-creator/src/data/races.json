@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Android",
+    "movement": "40ft",
+    "vision": "Night vision and superior vision",
+    "resistance": "Don't require food or air, but must charge every 17 hours or they will power down",
+    "age": "150/200",
+    "attributeBonus": { "intelligence": 2 },
+    "skillChoice": ["Medical", "Mechanics", "Science", "Tech"],
+    "description": "Androids are synthetic beings created by humans to solve complex problems. Over time, they develop their own personalities and independence. They require no sustenance but must recharge regularly."
+  },
+  {
+    "name": "Human",
+    "movement": "30ft",
+    "vision": "Normal 20/20 vision",
+    "resistance": "Can survive unprotected in space for 3 rounds",
+    "age": "200/300",
+    "attributeBonus": { "choice": ["1 to two attributes"] },
+    "skillChoice": ["Medical", "Mechanics", "Science", "Tech"],
+    "description": "Humans are adaptive and resilient, with a history of innovation and survival. They’ve evolved to survive briefly in the vacuum of space and are known for their versatility and creativity."
+  },
+  {
+    "name": "Kilmerians",
+    "movement": "45ft",
+    "vision": "Dark Vision",
+    "resistance": "Toxic Fumes",
+    "age": "200",
+    "attributeBonus": { "constitution": 2 },
+    "skillChoice": ["Operator", "Unarmed", "Melee", "Athletics"],
+    "description": "Kilmerians are muscular, resilient warriors from Titan. They are deeply tied to their traditions, often serve as mercenaries, and thrive in harsh environments thanks to their physical endurance."
+  },
+  {
+    "name": "Saronians",
+    "movement": "30ft",
+    "vision": "Normal 20/20 vision",
+    "resistance": "Cold",
+    "age": "500/700",
+    "attributeBonus": { "wisdom": 2 },
+    "skillChoice": ["Operator", "Unarmed", "Melee", "Athletics"],
+    "special": "Can speak telepathically",
+    "description": "Saronians are ancient, empathetic, and flexible beings with vast knowledge and wisdom. With telepathic abilities and access to advanced technology, they are respected for intellect and emotional insight."
+  },
+  {
+    "name": "Skarnak",
+    "movement": "35ft",
+    "vision": "Thermal vision",
+    "resistance": "Electric shock",
+    "age": "100/150",
+    "attributeBonus": { "dexterity": 2 },
+    "skillChoice": ["Stealth", "Operator", "Gunning", "Called Strike"],
+    "description": "Reptilian nomads of the deep voids, Skarnaks rely on thermal sight and electrical resistance to survive in industrial warzones and crumbling space stations. Agile and precise."
+  },
+  {
+    "name": "Velari",
+    "movement": "30ft",
+    "vision": "Multi-spectrum optical",
+    "resistance": "Psychic interference",
+    "age": "300/400",
+    "attributeBonus": { "charisma": 2 },
+    "skillChoice": ["Speech", "Art", "Religion", "Science"],
+    "description": "Elegant and empathic, Velari are diplomats and mystics. Their radiant presence and psychic resilience make them ideal mediators and visionaries in intergalactic conflicts."
+  },
+  {
+    "name": "Dornak",
+    "movement": "25ft",
+    "vision": "Echolocation",
+    "resistance": "Sonar disruption",
+    "age": "60/100",
+    "attributeBonus": { "constitution": 2 },
+    "skillChoice": ["Unarmed", "Athletics", "Perceive", "Mechanics"],
+    "description": "Cave-dwelling brutes with internal sonar, Dornaks are strong, short-lived warriors adapted to darkness and brute labor. Toughened by life in echoing voids."
+  },
+  {
+    "name": "Irixians",
+    "movement": "40ft",
+    "vision": "Infrared and digital overlay",
+    "resistance": "EMP effects",
+    "age": "250/500",
+    "attributeBonus": { "intelligence": 2 },
+    "skillChoice": ["Technology", "Science", "Operator", "Gunning"],
+    "description": "Technosavants of an ancient lost dataworld, Irixians are born plugged in. Immune to EMPs and skilled in hardwired combat and diagnostics."
+  }
+]
