@@ -1,0 +1,45 @@
+{
+    "unarmed": {
+        "id": "unarmed", 
+        "name": "Fists", 
+        "damage": "1d4", 
+        "bonus": 0, 
+        "type": "unarmed",
+        "attribute": "Constitution,Dexterity" 
+    },
+    "laser_pistol": {
+        "id": "laser_pistol", 
+        "name": "Laser Pistol", 
+        "damage": "1d6", 
+        "bonus": 1, 
+        "type": "ranged",
+        "attribute": "Dexterity"
+    },
+    "knife": {
+        "id": "knife", 
+        "name": "Survival Knife", 
+        "damage": "1d6", 
+        "bonus": 0, 
+        "type": "melee",
+        "subType": "bladed",
+        "attribute": "Dexterity"
+    },
+    "crowbar": {
+        "id": "crowbar",
+        "name": "Crowbar",
+        "damage": "1d6",
+        "bonus": 0,
+        "type": "melee",
+        "subType": "blunt",
+        "attribute": "Constitution"
+    },
+    "broken_pipe": {
+        "id": "broken_pipe",
+        "name": "Broken Pipe",
+        "damage": "1d6",
+        "bonus": 0,
+        "type": "melee",
+        "subType": "improvised",
+        "attribute": "Constitution,Dexterity"
+    }
+}

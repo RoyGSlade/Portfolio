@@ -1,0 +1,140 @@
+{
+  "start_tutorial": {
+    "text": "You awaken in the dimly lit med-bay of a derelict freighter. A chill runs down your spine. You're wearing nothing but a thin medical gown. On the cot beside you is a bundle of clothes and a standard-issue survival knife.\n\n(Hint: You should probably get dressed. Open your inventory using the briefcase icon in the top right.)",
+    "choices": [
+      { "text": "Examine the room", "leadsTo": "examine_medbay_tutorial" },
+      { "text": "Try the door", "leadsTo": "corridor", "requires": {"itemEquipped": "basic_clothes"} }
+    ]
+  },
+  "examine_medbay_tutorial": {
+    "text": "The med-bay is sparse. An empty cot, a shattered diagnostics screen, and a small supply locker, rusted shut. You really should get dressed before you explore.",
+    "choices": [
+        { "text": "Right, I should get dressed", "leadsTo": "start_tutorial"},
+        { "text": "Try the door anyway", "leadsTo": "corridor", "requires": {"itemEquipped": "basic_clothes"} }
+    ]
+  },
+  "start": {
+    "text": "The med-bay is sparse. An empty cot, a shattered diagnostics screen, and a small supply locker, rusted shut.",
+    "choices": [
+      { "text": "Force locker open (Athlete Check DC 12)", "type": "skillCheck", "skill": "Athlete", "dc": "12", "onSuccess": "locker_success", "onFailure": "locker_failure" },
+      { "text": "Hack the lock (Technology Check DC 14)", "type": "skillCheck", "skill": "Technology", "dc": "14", "onSuccess": "locker_success", "onFailure": "locker_failure" },
+      { "text": "Leave the locker", "leadsTo": "corridor" }
+    ]
+  },
+  "examine_medbay": {
+    "text": "The med-bay is sparse. An empty cot, a shattered diagnostics screen, and a small supply locker, rusted shut.",
+    "choices": [
+      { "text": "Force locker open (Athlete Check DC 12)", "type": "skillCheck", "skill": "Athlete", "dc": "12", "onSuccess": "locker_success", "onFailure": "locker_failure" },
+      { "text": "Hack the lock (Technology Check DC 14)", "type": "skillCheck", "skill": "Technology", "dc": "14", "onSuccess": "locker_success", "onFailure": "locker_failure" },
+      { "text": "Leave the locker", "leadsTo": "corridor" }
+    ]
+  },
+  "locker_success": {
+    "text": "Success! The locker pops open. Inside, you find a 'Health Stim'.",
+    "actions": [ { "type": "addItem", "itemId": "health_stim" } ],
+    "choices": [ { "text": "Take it and leave", "leadsTo": "corridor" } ]
+  },
+  "locker_failure": {
+    "text": "You struggle with the lock but can't get it to budge. You give up for now.",
+    "choices": [ { "text": "Leave it be", "leadsTo": "corridor" } ]
+  },
+  "corridor": {
+    "text": "You step into a long, dark corridor. Emergency lights cast long, eerie shadows. A loud clang echoes from down the hall to your left. The path to the right seems quiet.",
+    "choices": [
+      { "text": "Investigate the noise (Left)", "leadsTo": "combat_start" },
+      { "text": "Go down the quiet path (Right)", "leadsTo": "quiet_path" }
+    ]
+  },
+  "combat_start": {
+    "text": "As you round the corner, a rogue maintenance drone, sparks flying from a damaged optical sensor, whirls to face you. It raises a menacing claw!",
+    "choices": [
+      { "text": "Fight!", "type": "startCombat", "enemyId": "rogue_drone" }
+    ]
+  },
+  "combat_victory": {
+    "text": "With a final shudder, the drone collapses into a heap of scrap metal. The corridor is quiet once more. You continue toward the bridge.",
+    "choices": [
+      { "text": "Enter the bridge", "leadsTo": "bridge_scene" }
+    ]
+  },
+  "quiet_path": {
+    "text": "You avoid the fight and make your way to the bridge.",
+    "choices": [
+      { "text": "Enter the bridge", "leadsTo": "bridge_scene" }
+    ]
+  },
+  "bridge_scene": {
+    "text": "You step onto the ship’s bridge. A panoramic view screen displays a terrifying sight—an uncharted planet looms large. Warning lights flare. Your ship is moments away from atmospheric entry.",
+    "choices": [
+      { "text": "Use escape pod", "leadsTo": "escape_pod_entry" },
+      { "text": "Stay and brace for impact", "leadsTo": "crash_impact" }
+    ]
+  },
+  "escape_pod_entry": {
+    "text": "You climb into the escape pod and launch. Flames lick the outer hull as you pierce the atmosphere. Moments later—impact. You awaken amidst twisted pod metal, bruised but alive.",
+    "actions": [ { "type": "setFlag", "flag": "survived_pod_landing", "value": true } ],
+    "choices": [
+      { "text": "Crawl out into the forest", "leadsTo": "forest_entry" }
+    ]
+  },
+  "crash_impact": {
+    "text": "You cling to the bridge controls as the ship plummets. The world becomes fire and screeching metal. Then blackness. You awaken barely alive, buried under debris.",
+    "actions": [ { "type": "setHP", "value": 1 } ],
+    "choices": [
+      { "text": "Climb free", "leadsTo": "forest_entry" }
+    ]
+  },
+  "forest_entry": {
+    "text": "Towering trees surround you. Thick foliage. The ship wreckage burns behind you. You're not alone here. The local tech level? Primitive—stone tools, scattered iron. Survival here won’t be easy.\n\nSomewhere out there are villages, wild things, and perhaps the means to build a radio and signal for help. But first—you must survive the forest.",
+    "choices": [
+      { "text": "Head toward distant smoke", "leadsTo": "village_intro" },
+      { "text": "Venture deeper into the woods", "leadsTo": "forest_path" }
+    ]
+  },
+  "village_intro": {
+    "text": "You find a small village of crude huts and wary stares. These people have never seen anything like you. The questions begin. So does your journey.",
+    "choices": [
+      { "text": "Speak with the villagers", "leadsTo": "dialogue_village_start" }
+    ]
+  },
+  "forest_path": {
+    "text": "You move silently through the forest, the trees growing denser. Somewhere out here are predators... and relics buried in time.",
+    "choices": [
+      { "text": "Search for shelter", "leadsTo": "forest_shelter" }
+    ]
+  },
+  "dialogue_village_start": {
+    "text": "A village elder approaches cautiously. \"You fell from the sky, outsider. We’ve seen omens of your kind before. Perhaps... you are what the prophecy spoke of.\"",
+    "choices": [
+      { "text": "Ask about the prophecy", "leadsTo": "prophecy_info" },
+      { "text": "Change the subject", "leadsTo": "village_daily_life" }
+    ]
+  },
+  "forest_shelter": {
+    "text": "You find a rocky outcrop with some natural cover. It will do for now. As night falls, the forest comes alive with howls and rustling... You're not alone.",
+    "choices": [
+      { "text": "Stay awake and keep watch", "leadsTo": "forest_night_event" }
+    ]
+  },
+  
+  "prophecy_info": {
+    "text": "The elder speaks of a star-child destined to save them from a great shadow. The story is vague, but their belief is strong. They look at you with hope.",
+    "choices": [
+        { "text": "Ask about the 'great shadow'", "leadsTo": "village_daily_life" },
+        { "text": "Tell them you need to rest", "leadsTo": "village_daily_life" }
+    ]
+  },
+  "village_daily_life": {
+    "text": "You spend some time observing the village. The people are simple farmers and hunters, but a sense of fear hangs in the air, especially as night approaches.",
+    "choices": [
+        { "text": "Offer to help with their work", "leadsTo": "village_intro" },
+        { "text": "Leave the village and return to the forest", "leadsTo": "forest_path" }
+    ]
+  },
+  "forest_night_event": {
+    "text": "As you keep watch, a pair of glowing eyes emerges from the darkness. A large, wolf-like creature snarls, circling your position. It looks hungry.",
+    "choices": [
+        { "text": "Prepare to fight!", "leadsTo": "combat_start" }
+    ]
+  }
+}

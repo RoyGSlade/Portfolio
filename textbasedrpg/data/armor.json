@@ -1,0 +1,5 @@
+{
+    "jumpsuit": {"id": "jumpsuit", "name": "Standard Jumpsuit", "armorRating": 10, "armorPoints": 0},
+    "flak_vest": {"id": "flak_vest", "name": "Flak Vest", "armorRating": 12, "armorPoints": 8},
+    "basic_clothes": {"id": "basic_clothes", "name": "Basic Clothes", "armorRating": 11, "armorPoints": 0}
+}

@@ -1,0 +1,10 @@
+{
+    "rogue_drone": {
+        "name": "Rogue Drone",
+        "hp": 15,
+        "maxHp": 15,
+        "damage": "1d6",
+        "armorRating": 11,
+        "xp": 10
+    }
+}

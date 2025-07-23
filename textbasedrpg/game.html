@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Ages - A Text RPG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <style>
+        body { font-family: 'VT323', monospace; font-size: 1.5rem; }
+        .font-title { font-family: 'Press Start 2P', cursive; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        .modal-hidden { display: none; }
+        .modal-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 40; }
+        .modal-content { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 50; }
+
+        /* MODIFIED: Custom styles for the new scrollable skills container */
+        #skills-scroll-container {
+            max-height: 16rem; /* Adjust this height to control how many skills are visible */
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #F59E0B #374151; /* amber-500 for thumb, gray-700 for track */
+            padding-right: 0.5rem; /* Add space for the scrollbar */
+        }
+
+        /* For Webkit browsers (Chrome, Safari) */
+        #skills-scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #skills-scroll-container::-webkit-scrollbar-track {
+            background: #374151; /* gray-700 */
+            border-radius: 10px;
+        }
+
+        #skills-scroll-container::-webkit-scrollbar-thumb {
+            background-color: #F59E0B; /* amber-500 */
+            border-radius: 10px;
+            border: 2px solid #374151; /* Creates padding around thumb */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
+
+    <div id="game-container" class="w-full max-w-4xl mx-auto bg-gray-800/50 rounded-lg shadow-2xl border border-gray-700 p-6 md:p-8 relative">
+
+        <!-- UI Buttons -->
+        <div class="absolute top-4 right-4 flex gap-4 z-10">
+            <button id="open-inventory-btn" class="text-yellow-400 hover:text-yellow-300 transition-colors" title="Inventory">
+                <i class="fas fa-briefcase fa-2x"></i>
+            </button>
+            <button id="open-char-sheet" class="text-yellow-400 hover:text-yellow-300 transition-colors" title="Character Sheet">
+                <i class="fas fa-user-circle fa-2x"></i>
+            </button>
+        </div>
+
+        <header class="text-center mb-6">
+            <h1 id="game-title" class="text-3xl md:text-4xl font-title text-yellow-400">Infinite Ages</h1>
+        </header>
+
+        <main id="text-display" class="mb-8 p-4 bg-gray-900 rounded-md border border-gray-600 min-h-[150px] whitespace-pre-wrap"></main>
+        <footer id="choices-display" class="grid grid-cols-1 md:grid-cols-2 gap-4"></footer>
+        
+        <audio id="click-sound" src="sounds/click.mp3" preload="auto"></audio>
+    </div>
+
+    <div id="skill-check-modal" class="modal-hidden">
+            <div class="modal-backdrop bg-gray-900/80"></div>
+            <div class="modal-content bg-gray-800/90 backdrop-blur-sm text-white p-6 rounded-lg shadow-lg w-full max-w-md border-2 border-yellow-500/50 text-center">
+                <h2 id="skill-check-title" class="text-2xl font-title text-yellow-400 mb-4">Skill Check</h2>
+                <div class="space-y-3 mb-6 text-xl">
+                    <p>Your Bonus: <span id="skill-check-bonus" class="font-bold text-blue-400"></span></p>
+                    <p>Target DC: <span id="skill-check-dc" class="font-bold text-red-400"></span></p>
+                </div>
+                <button id="skill-check-roll-btn" class="w-full p-4 bg-yellow-600 hover:bg-yellow-500 rounded-md text-gray-900 font-bold text-2xl">
+                    ROLL D20
+                </button>
+                <div id="skill-check-result" class="mt-6 min-h-[6rem] text-2xl flex flex-col justify-center items-center">
+                    <!-- Result will be injected here -->
+                </div>
+            </div>
+        </div>
+
+    <!-- Character Sheet Modal (New Layout) -->
+    <div id="character-sheet-modal" class="modal-hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full max-w-md max-h-[90vh] overflow-y-auto border-2 border-yellow-500/50">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-title text-yellow-400">Character Sheet</h2>
+                <div class="flex items-center gap-4">
+                    <button id="save-game-sheet-btn" class="text-green-400 hover:text-green-300 transition-colors" title="Save Game">
+                        <i class="fas fa-save fa-lg"></i>
+                    </button>
+                    <button id="reset-game-btn" class="text-red-500 hover:text-red-400 transition-colors" title="Reset Game">
+                        <i class="fas fa-trash-alt fa-lg"></i>
+                    </button>
+                    <button id="close-char-sheet" class="text-2xl text-gray-400 hover:text-white">×</button>
+                </div>
+            </div>
+            <div id="character-sheet-content" class="space-y-4 text-lg">
+                <div class="p-3 bg-gray-900/50 rounded">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                        <div><strong class="text-yellow-500">Name:</strong> <span id="char-name"></span></div>
+                        <div><strong class="text-yellow-500">Race:</strong> <span id="char-race"></span></div>
+                        <div><strong class="text-yellow-500">Background:</strong> <span id="char-background"></span></div>
+                    </div>
+                </div>
+                <div class="p-3 bg-gray-900/50 rounded">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><strong class="text-yellow-500">HP:</strong> <span id="char-hp"></span></div>
+                        <div><strong class="text-yellow-500">Armor Rating:</strong> <span id="char-ar"></span></div>
+                    </div>
+                </div>
+                <div class="p-3 bg-gray-900/50 rounded">
+                    <div class="grid grid-cols-3 md:grid-cols-5 gap-2 text-center">
+                        <div><strong class="text-yellow-500">CON</strong><br><span id="attr-con"></span></div>
+                        <div><strong class="text-yellow-500">DEX</strong><br><span id="attr-dex"></span></div>
+                        <div><strong class="text-yellow-500">WIS</strong><br><span id="attr-wis"></span></div>
+                        <div><strong class="text-yellow-500">INT</strong><br><span id="attr-int"></span></div>
+                        <div><strong class="text-yellow-500">CHA</strong><br><span id="attr-cha"></span></div>
+                    </div>
+                </div>
+                <div class="p-3 bg-gray-900/50 rounded space-y-2">
+                    <h3 class="font-title text-xl text-yellow-500">Equipment</h3>
+                    <div><strong>Weapon:</strong> <span id="char-weapon"></span></div>
+                    <div><strong>Armor:</strong> <span id="char-armor"></span></div>
+                </div>
+                <!-- MODIFIED: Wrapped the skills section in a new scrollable div -->
+                <div class="p-3 bg-gray-900/50 rounded space-y-2">
+                    <h3 class="font-title text-xl text-yellow-500">Skills</h3>
+                    <div id="skills-scroll-container">
+                        <div id="char-skills" class="space-y-2">
+                            <!-- Skills will be populated here by ui.js -->
+                        </div>
+                    </div>
+                </div>
+                 <div class="p-3 bg-gray-900/50 rounded space-y-2">
+                    <h3 class="font-title text-xl text-yellow-500">Inventory</h3>
+                    <ul id="char-items" class="list-disc list-inside"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Inventory Modal -->
+    <div id="inventory-modal" class="modal-hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full max-w-lg max-h-[90vh] overflow-y-auto border-2 border-yellow-500/50">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-title text-yellow-400">Inventory</h2>
+                <audio id="bgm" src="sounds/LostInSpace.mp3" preload="auto" loop></audio>
+                <div class="flex items-center gap-4">
+                    <button id="save-game-inventory-btn" class="text-yellow-400 hover:text-yellow-300 transition-colors" title="Save Game">
+                        <i class="fas fa-save fa-2x"></i>
+                    </button>
+                    <button id="close-inventory-btn" class="text-2xl text-gray-400 hover:text-white">×</button>
+                </div>
+            </div>
+            <div id="inventory-list" class="space-y-3">
+                <!-- Inventory items will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

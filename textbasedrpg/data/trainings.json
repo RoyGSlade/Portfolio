@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Aviator School",
+    "description": "Trains pilots in high-speed tactics, navigation, and evasion.",
+    "armorRating": 11,
+    "initiative": 1,
+    "hitPoints": 8,
+    "majors": [
+      { "name": "Control", "attribute": "Dexterity", "skill": "Operator" },
+      { "name": "Astronavigation", "attribute": "Dexterity", "skill": "Navigation" },
+      { "name": "Repo", "attribute": "Dexterity", "skill": "Hijack" }
+    ]
+  },
+  {
+    "name": "Cultural Studies",
+    "description": "For those who aim to understand, preserve, and influence culture.",
+    "armorRating": 11,
+    "initiative": 0,
+    "hitPoints": 8,
+    "majors": [
+      { "name": "Fine Arts", "attribute": "Charisma", "skill": "Artist" },
+      { "name": "Chronologist", "attribute": "Intelligence", "skill": "History" },
+      { "name": "Religion", "attribute": "Intelligence", "skill": "Religion" },
+      { "name": "Food & Safety", "attribute": "Constitution", "skill": "Nutrition" }
+    ]
+  },
+  {
+    "name": "Interpersonal Studies",
+    "description": "Hones speech, negotiation, and influence.",
+    "armorRating": 11,
+    "initiative": 1,
+    "hitPoints": 8,
+    "majors": [
+      { "name": "Bureaucracy", "attribute": "Intelligence", "skill": "Bureaucracy" },
+      { "name": "Business", "attribute": "Wisdom", "skill": "Business" },
+      { "name": "Public Speaking", "attribute": "Charisma", "skill": "Speech" },
+      { "name": "Psychology", "attribute": "Charisma", "skill": "Gambling" }
+    ]
+  },
+  {
+    "name": "Military Trained",
+    "description": "Prepares soldiers for battlefield and covert operations.",
+    "armorRating": 12,
+    "initiative": 2,
+    "hitPoints": 8,
+    "majors": [
+      { "name": "Infiltration", "attribute": "Dexterity", "skill": "Stealth" },
+      { "name": "Infantry", "attribute": "Dexterity", "skill": "Gunning" },
+      { "name": "Scout", "attribute": "Wisdom", "skill": "Perception" },
+      { "name": "Sniper", "attribute": "Dexterity", "skill": "Called Shot" }
+    ]
+  },
+  {
+    "name": "Collegiate Athlete",
+    "description": "Produces elite physical performers and competitors.",
+    "armorRating": 12,
+    "initiative": 2,
+    "hitPoints": 8,
+    "majors": [
+      { "name": "Team Sport", "attribute": "Constitution", "skill": "Athlete" },
+      { "name": "Sword, Staff, Joust", "attribute": "Constitution", "skill": "Melee" },
+      { "name": "Boxing, Wrestling", "attribute": "Constitution", "skill": "Unarmed" },
+      { "name": "Fraternity", "attribute": "Wisdom", "skill": "Street" }
+    ]
+  },
+  {
+    "name": "Scientific Academy",
+    "description": "Where logic, experimentation, and research are honed.",
+    "armorRating": 11,
+    "initiative": 0,
+    "hitPoints": 8,
+    "majors": [
+      { "name": "Hardware Engineer", "attribute": "Intelligence", "skill": "Technology" },
+      { "name": "Mechanical Engineer", "attribute": "Wisdom", "skill": "Mechanics" },
+      { "name": "General Science", "attribute": "Intelligence", "skill": "Science" },
+      { "name": "Health", "attribute": "Wisdom", "skill": "Medical" }
+    ]
+  }
+]

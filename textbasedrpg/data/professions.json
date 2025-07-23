@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Astronomer",
+    "startingCredits": 7500,
+    "passive": "Advantage on finding items using a map",
+    "abilities": {
+      "1": "Always know the direction of North",
+      "2": "Can always retrace steps to find the path",
+      "3": "Advantage on navigating spacecraft or seacraft",
+      "4": "Advantage on dexterity checks when navigating unexplored places",
+      "5": "Sense of direction may draw you to fortune once per month"
+    },
+    "description": "Star-charts, sextants, and sky logic — astronomers are the navigators of the cosmos. They read the stars like ancient texts and can find treasure where others see nothing but space."
+  },
+  {
+    "name": "Doctor",
+    "startingCredits": 7500,
+    "passive": "You have one cure that you are known for",
+    "abilities": {
+      "1": "Group regains double HP when recovering",
+      "2": "Advantage on stabilizing unconscious individuals",
+      "3": "Advantage on finding a cure for familiar people",
+      "4": "Never get a diagnosis wrong",
+      "5": "Once per month, can find a cure without a roll"
+    },
+    "description": "Life savers and miracle workers, doctors in Infinite Ages are more than healers — they’re legends. Known across sectors for their signature cures."
+  },
+  {
+    "name": "Creative",
+    "startingCredits": 7500,
+    "passive": "You have a signature style that has gained popularity",
+    "abilities": {
+      "1": "Art can influence emotions or opinions; advantage on persuasion/deception",
+      "2": "Advantage on finding buyers, venues, or collaborators",
+      "3": "Once per month gain inspiration for creative performance",
+      "4": "Create a legendary masterpiece once per month",
+      "5": "Receive exclusive invites and gain a new artistic proficiency"
+    },
+    "description": "Visionaries and cultural architects — creatives shape the emotional fabric of society. Their art changes hearts, starts revolutions, and leaves legacies."
+  },
+  {
+    "name": "Software Engineer / Mathematician",
+    "startingCredits": 10000,
+    "passive": "Advantage on creating algorithms or code",
+    "abilities": {
+      "1": "Can make skill rolls with objects without spending actions",
+      "2": "Can create and sell functional apps and algorithms",
+      "3": "Advantage on identifying issues with puzzles or machines",
+      "4": "Double success on Intelligence-based skills",
+      "5": "Encode and decode secret messages with math/code"
+    },
+    "description": "Whether bending logic or writing reality, these tech masters are the silent architects of modern civilization — fluent in numbers, systems, and secrets."
+  },
+  {
+    "name": "Engineer",
+    "startingCredits": 10000,
+    "passive": "Engineering credentials grant access to corporate labs",
+    "abilities": {
+      "1": "Builds cost half the normal amount",
+      "2": "Can patent and sell their builds",
+      "3": "Armor repairs add an extra d4 of armor points",
+      "4": "Advantage on crafting a specialized item",
+      "5": "Specialized item builds take half the time and successes"
+    },
+    "description": "From prototype to product, engineers invent, build, and optimize. Their innovations fuel war machines and civilian miracles alike."
+  },
+  {
+    "name": "Bounty Hunter",
+    "startingCredits": 15000,
+    "passive": "Chance to detect high-value bounties when entering establishments (1d20: 19–20)",
+    "abilities": {
+      "1": "Advantage on tracking living targets",
+      "2": "No penalty for called shots against bounties",
+      "3": "Advantage on speech checks with law enforcement",
+      "4": "Immune to stun status",
+      "5": "Rates are doubled; 25% discount on bounty gear"
+    },
+    "description": "Merciless or moral, bounty hunters are apex predators — armed with grit, instincts, and a license to bring the galaxy's worst to justice."
+  },
+  {
+    "name": "Mechanic",
+    "startingCredits": 10000,
+    "passive": "Fix any item once per day without parts or tools",
+    "abilities": {
+      "1": "Advantage on repairs in high-stakes situations",
+      "2": "Chance to enhance or weaken item on repair roll",
+      "3": "Advantage on modifying repaired items",
+      "4": "+3 bonus to crafting table rolls",
+      "5": "Extra roll on crafting table once per day"
+    },
+    "description": "Tinkerers, hackers, and saviors of dying tech — mechanics keep old worlds spinning and new ideas alive."
+  },
+  {
+    "name": "Scrapper",
+    "startingCredits": 8000,
+    "passive": "Scrap without tools; chance to find rare item on 1d20 roll of 19–20",
+    "abilities": {
+      "1": "Can estimate salvage value on sight",
+      "2": "Advantage when scrapping",
+      "3": "Can smell nearby valuables",
+      "4": "Advantage on bartering",
+      "5": "Finds cleanup/salvage jobs easily"
+    },
+    "description": "Urban scavengers and scrap kings. What others see as junk, scrappers see as treasure, profit, or weapons in disguise."
+  },
+  {
+    "name": "Miner",
+    "startingCredits": 8000,
+    "passive": "Sell raw materials at +20% premium",
+    "abilities": {
+      "1": "Can estimate resource value of terrain by panning",
+      "2": "+1 Constitution from harsh work environments",
+      "3": "Advantage when bartering for items or land",
+      "4": "Chance to find treasure while mining (1d20: 19–20)",
+      "5": "Can always find contracts for mining or logistics"
+    },
+    "description": "Diggers of fate and fortune, miners are rugged, sturdy, and indispensable to the industrial lifeblood of the galaxy."
+  },
+  {
+    "name": "Entrepreneur",
+    "startingCredits": 12000,
+    "passive": "Can talk down combatants without disadvantage",
+    "abilities": {
+      "1": "Reduce cost of services by 10% for up to 10 businesses",
+      "2": "Can forge contracts using the crafting table",
+      "3": "Advantage on business negotiations",
+      "4": "Has contacts in most corporations",
+      "5": "Earns 10% of all marketed business income"
+    },
+    "description": "Smooth, smart, and always closing — entrepreneurs turn charm into currency and dreams into empire."
+  },
+  {
+    "name": "Hustler",
+    "startingCredits": 9000,
+    "passive": "Advantage in games of chance; can always double or nothing (loses advantage if you do)",
+    "abilities": {
+      "1": "Advantage on stealth rolls when plans go sideways",
+      "2": "Can drink alcohol without intoxication",
+      "3": "Advantage on pickpocketing after playing games",
+      "4": "Always spot other hustlers without rolling",
+      "5": "Insight checks against you have disadvantage"
+    },
+    "description": "Conmen, gamblers, and charismatic scoundrels — hustlers make their living one fast deal or shady bet at a time."
+  },
+  {
+    "name": "Adventurist",
+    "startingCredits": 12000,
+    "passive": "One dexterity check per day at advantage",
+    "abilities": {
+      "1": "Know another’s power instinctively",
+      "2": "Reroll any roll once per day",
+      "3": "Ignore dexterity-based disadvantage once per day",
+      "4": "Give party 1d6 temporary HP with a pre-battle speech",
+      "5": "Attract high-paying, high-risk job offers"
+    },
+    "description": "Thrill-seekers and danger junkies — adventurists chase the unknown, ride chaos, and always land on their feet."
+  }
+]

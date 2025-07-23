@@ -1,0 +1,8 @@
+{
+    "health_stim": {
+        "id": "health_stim",
+        "name": "Health Stim",
+        "type": "consumable",
+        "effect": { "action": "heal", "amount": 10 }
+    }
+}

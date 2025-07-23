@@ -1,0 +1,524 @@
+[
+  {
+    "name": "Mind Manipulation",
+    "description": "Manipulate, control, and damage the minds of others. Powerful, but requires restraint.",
+    "levels": [
+      {
+        "level": 0,
+        "power": "Influence",
+        "activation_cost": "1 Action or 3 seconds",
+        "duration": "1 min per power in Mind Manipulation",
+        "range": "120 ft",
+        "uses": "Once per day",
+        "effect": "Calm or anger a target (Calm 1 or Anger 1)."
+      },
+      {
+        "level": 1,
+        "power": "Convulse",
+        "activation_cost": "1 Reaction",
+        "duration": "Instant",
+        "range": "50 ft",
+        "uses": "Twice per day",
+        "effect": "Target makes Con vs your Wis. On fail: lose action (involuntary convulsion)."
+      },
+      {
+        "level": 1,
+        "power": "Text to Speech",
+        "activation_cost": "1 Action or At Will",
+        "duration": "N/A",
+        "range": "Sight within 1000 ft",
+        "uses": "Unlimited",
+        "effect": "Force a target to speak 10 words. Opposed Wis check. Failure alerts target."
+      },
+      {
+        "level": 1,
+        "power": "Telepathy",
+        "activation_cost": "1 Action or At Will",
+        "duration": "Instant",
+        "range": "1000 ft",
+        "uses": "Unlimited",
+        "effect": "Mentally send a message to willing targets (cannot reply mentally)."
+      },
+      {
+        "level": 1,
+        "power": "Pacify",
+        "activation_cost": "1 Action",
+        "duration": "1 min",
+        "range": "100 ft",
+        "uses": "Twice per day",
+        "effect": "Pacify a number of aggressive targets (oppose Wis in combat). Attack breaks effect."
+      },
+      {
+        "level": 2,
+        "power": "Migraine",
+        "activation_cost": "1 Action",
+        "duration": "2 rounds",
+        "range": "120 ft (sight)",
+        "uses": "Twice per day",
+        "effect": "Give targets disadvantage on Int and all opposed checks vs you."
+      },
+      {
+        "level": 2,
+        "power": "Hemorrhaging",
+        "activation_cost": "1 Action",
+        "duration": "Instant",
+        "range": "30 ft",
+        "uses": "Powers in Mind Manipulation ÷ 2 per day",
+        "effect": "Deal 1d12+Int brain damage."
+      },
+      {
+        "level": 2,
+        "power": "Brain Pulse",
+        "activation_cost": "1 Action",
+        "duration": "Instant",
+        "range": "60 ft",
+        "uses": "Twice per day",
+        "effect": "Deal 1d8 psychic damage to up to Powers in Mind Manipulation targets."
+      },
+      {
+        "level": 3,
+        "power": "Forget Me Not",
+        "activation_cost": "At Will",
+        "duration": "Instant",
+        "range": "150 ft (sight)",
+        "uses": "Once per day",
+        "effect": "Erase last 10 min from minds of up to Powers in Mind Manipulation targets. (non-combat only)"
+      },
+      {
+        "level": 3,
+        "power": "Mind Trick",
+        "activation_cost": "At Will",
+        "duration": "Until command complete",
+        "range": "60 ft",
+        "uses": "Intelligence per day",
+        "effect": "Force neutral target to aid (hide, lie, supply, etc). Not usable in combat."
+      },
+      {
+        "level": 3,
+        "power": "Mindscape",
+        "activation_cost": "At Will",
+        "duration": "Instant",
+        "range": "20 ft",
+        "uses": "Once per day",
+        "effect": "Read target's thoughts. (non-combat only)"
+      },
+      {
+        "level": 3,
+        "power": "Deep Thought",
+        "activation_cost": "1 Action",
+        "duration": "10 rounds (combat) or 5 min (non-combat)",
+        "range": "60 ft",
+        "uses": "Once per day",
+        "effect": "Self and all allies in range gain +5 to all rolls until end."
+      },
+      {
+        "level": 4,
+        "power": "Adrenaline Release",
+        "activation_cost": "1 Action",
+        "duration": "15 min",
+        "range": "30 ft radius",
+        "uses": "Powers in Mind Manipulation ÷ 3 per day",
+        "effect": "Allies in radius gain 8 temporary HP (does not stack)."
+      },
+      {
+        "level": 4,
+        "power": "Accelerated Perception",
+        "activation_cost": "2 Actions (combat only)",
+        "duration": "Rounds = Intelligence",
+        "range": "Self",
+        "uses": "Once per day",
+        "effect": "Perceive time at 1/4 speed, +4 AR, +2 actions/turn. After use, cannot use Mind Manipulation for 2 days."
+      },
+      {
+        "level": 4,
+        "power": "Shades",
+        "activation_cost": "1 Action",
+        "duration": "Until target dies or delusions disappear",
+        "range": "120 ft (sight)",
+        "uses": "Once per day",
+        "effect": "Create delusions in target's mind, causing fear and movement/attack penalties. Delusions do psychic damage."
+      },
+      {
+        "level": 4,
+        "power": "Sleep",
+        "activation_cost": "1 Action",
+        "duration": "Hours = Powers in Mind Manipulation ÷ 4",
+        "range": "300 ft (sight)",
+        "uses": "Once per day",
+        "effect": "Targets must pass opposed Wisdom or fall asleep (cannot be woken until time expires)."
+      },
+      {
+        "level": 4,
+        "power": "Heal",
+        "activation_cost": "1 Action",
+        "duration": "Instant",
+        "range": "200 ft (sight)",
+        "uses": "Once per day",
+        "effect": "Fully heal target's trauma and restore to full HP."
+      },
+      {
+        "level": 5,
+        "power": "Cognition Control",
+        "activation_cost": "1 Action",
+        "duration": "1 hour",
+        "range": "Sight",
+        "uses": "Once per day",
+        "effect": "Up to 6 allies become unrecognizable/hidden unless they attack or make a scene. Not in combat."
+      },
+      {
+        "level": 5,
+        "power": "Cognitive Nightmare",
+        "activation_cost": "1 Action",
+        "duration": "1 minute",
+        "range": "Self",
+        "uses": "Three per day",
+        "effect": "All enemies see a horrific image; they must attack you, have Disadvantage, and -4 on all rolls against you."
+      }
+    ]
+  },
+  {
+    "name": "Burn Control",
+    "description": "Control, create, and manipulate fire. Risky, but powerful for damage and utility.",
+    "levels": [
+      {
+        "level": 0,
+        "power": "Thermal Control",
+        "activation_cost": "Unarmed/Melee attack used",
+        "duration": "Instant",
+        "range": "Self",
+        "uses": "Unlimited",
+        "effect": "Add 1d4 Thermal damage to Unarmed/Melee attack. Take 2 Thermal damage."
+      },
+      {
+        "level": 1,
+        "power": "Heat Resistant",
+        "activation_cost": "Passive",
+        "duration": "N/A",
+        "range": "N/A",
+        "uses": "N/A",
+        "effect": "Take half Thermal damage (rounded down), including self-inflicted."
+      },
+      {
+        "level": 1,
+        "power": "Hot Shot",
+        "activation_cost": "1 Action",
+        "duration": "Instant",
+        "range": "30 ft",
+        "uses": "Unlimited",
+        "effect": "Throw fireball for 1d6 Thermal damage; take 2 Thermal damage."
+      },
+      {
+        "level": 1,
+        "power": "Hot to Handle",
+        "activation_cost": "1 Action",
+        "duration": "Until deactivated",
+        "range": "Self",
+        "uses": "Twice per day",
+        "effect": "+2 Armor, deal 1d4 Thermal to melee attackers, ignite touched objects, damage self/armor each round."
+      },
+      {
+        "level": 1,
+        "power": "Fire Fall",
+        "activation_cost": "1 Reaction (combat), At Will (non-combat)",
+        "duration": "Instant",
+        "range": "Self",
+        "uses": "Three per day",
+        "effect": "Slow falls; from 60ft+ take half, <60ft take none. Gain advantage on Con challenge."
+      },
+      {
+        "level": 2,
+        "power": "I Have No Matches",
+        "activation_cost": "1 Action (combat); At Will (non-combat)",
+        "duration": "Instant",
+        "range": "120 ft",
+        "uses": "Unlimited",
+        "effect": "Ignite flammable object, giving it the Ignited status."
+      },
+      {
+        "level": 2,
+        "power": "Burst",
+        "activation_cost": "2 Actions",
+        "duration": "Instant",
+        "range": "5 ft radius/power",
+        "uses": "Twice per day",
+        "effect": "Explosive area fire attack (see rules for details)."
+      },
+      {
+        "level": 2,
+        "power": "Consume",
+        "activation_cost": "1 Action",
+        "duration": "Instant",
+        "range": "15 ft",
+        "uses": "Powers in Burn Control ÷ 2 per day",
+        "effect": "Absorb fire to regain HP; removes Ignited from allies. Attacks of opportunity may be triggered."
+      },
+      {
+        "level": 3,
+        "power": "Thermal Vision",
+        "activation_cost": "1 Action",
+        "duration": "Until deactivated",
+        "range": "Self",
+        "uses": "Unlimited",
+        "effect": "Sense heat through walls. Lose normal vision, -2 on perception involving sight."
+      },
+      {
+        "level": 3,
+        "power": "Superheat",
+        "activation_cost": "2 Actions",
+        "duration": "Instant",
+        "range": "Touch (60ft if have Thermal Vision/I Have No Matches)",
+        "uses": "Three per day",
+        "effect": "Heat metal to melting; target takes 1d10 Thermal if touching. Take 4 Thermal damage unless immune."
+      },
+      {
+        "level": 3,
+        "power": "Energy Source",
+        "activation_cost": "At Will (non-combat)",
+        "duration": "10 min x powers",
+        "range": "Self",
+        "uses": "Once per day",
+        "effect": "Replace a fuel source. Must rest after, for double duration used."
+      },
+      {
+        "level": 3,
+        "power": "Engulf",
+        "activation_cost": "1 Action",
+        "duration": "Instant",
+        "range": "60 ft (sight)",
+        "uses": "Twice per day",
+        "effect": "Engulf target in fire, 1d8/3 per power in Burn Control; Ignited status; take 4 Thermal damage."
+      },
+      {
+        "level": 4,
+        "power": "Blast",
+        "activation_cost": "1 Action",
+        "duration": "Instant",
+        "range": "60 ft (sight)",
+        "uses": "Twice per day",
+        "effect": "Blast of fire, similar to Engulf."
+      },
+      {
+        "level": 4,
+        "power": "Heat Vampirism",
+        "activation_cost": "1 Action or 3 sec",
+        "duration": "As long as target is restrained",
+        "range": "Touch",
+        "uses": "Powers in Burn Control ÷ 3 per day",
+        "effect": "Drain heat from restrained target: deal 1d6 Thermal, heal self for same amount."
+      },
+      {
+        "level": 4,
+        "power": "White Fire",
+        "activation_cost": "Passive",
+        "duration": "N/A",
+        "range": "N/A",
+        "uses": "N/A",
+        "effect": "All Burn Control damage dice increased (d4>d6, d6>d8, etc), d12 gets +4. Also take +2 self-damage."
+      },
+      {
+        "level": 4,
+        "power": "Flight",
+        "activation_cost": "1 Action",
+        "duration": "30 min or until deactivated",
+        "range": "Self",
+        "uses": "Three per day",
+        "effect": "Fly 40ft +5ft per 4 powers. Take 2 Thermal every 5 min."
+      },
+      {
+        "level": 4,
+        "power": "Phoenix",
+        "activation_cost": "Death",
+        "duration": "Instant",
+        "range": "Self",
+        "uses": "Once per 3 days",
+        "effect": "Resurrects you at full HP, lose most powers for 2 days, damage taken doubled until full recovery."
+      },
+      {
+        "level": 5,
+        "power": "Supernova",
+        "activation_cost": "2 Actions",
+        "duration": "Instant",
+        "range": "100 ft radius (plus 50 ft half damage)",
+        "uses": "Once per week",
+        "effect": "Massive explosion. 1d12/Power unlocked in Burn Control. Take 14 damage and lose all powers for a day."
+      },
+      {
+        "level": 5,
+        "power": "Heat Immunity",
+        "activation_cost": "Passive",
+        "duration": "N/A",
+        "range": "N/A",
+        "uses": "N/A",
+        "effect": "Immune to all Thermal damage, including self-inflicted."
+      }
+    ]
+  },
+  {
+    "name": "Teleportation",
+    "description": "Move yourself and others instantly. Includes phasing, movement, and mass teleport.",
+    "levels": [
+      {
+        "level": 0,
+        "power": "Blink",
+        "activation_cost": "Movement",
+        "duration": "Instant",
+        "range": "Half normal Movement",
+        "uses": "Unlimited",
+        "effect": "Teleport up to half your movement as your move action."
+      },
+      {
+        "level": 1,
+        "power": "Tightrope",
+        "activation_cost": "Passive",
+        "duration": "N/A",
+        "range": "Self",
+        "uses": "N/A",
+        "effect": "Advantage on Dex rolls involving movement, height, or ledges."
+      },
+      {
+        "level": 1,
+        "power": "Now You See Me",
+        "activation_cost": "1 Action or 3 sec",
+        "duration": "N/A",
+        "range": "Blink",
+        "uses": "Powers in Teleportation per day",
+        "effect": "Teleport two touched targets (willing or contested Dex roll if not)."
+      },
+      {
+        "level": 1,
+        "power": "Meld",
+        "activation_cost": "1 Action to activate/deactivate",
+        "duration": "1 min or until deactivated",
+        "range": "Self",
+        "uses": "3/day",
+        "effect": "Phase through objects, can't breathe or use items inside."
+      },
+      {
+        "level": 1,
+        "power": "Vanish",
+        "activation_cost": "1 Action/Reaction after Blink",
+        "duration": "Until another action/reaction",
+        "range": "Self",
+        "uses": "3/day",
+        "effect": "Become nearly invisible, gain Hidden status after using Blink."
+      },
+      {
+        "level": 2,
+        "power": "Catlike",
+        "activation_cost": "Passive",
+        "duration": "N/A",
+        "range": "Self",
+        "uses": "N/A",
+        "effect": "Always land on feet from <30ft, tumble to standing when knocked prone on Dex check."
+      },
+      {
+        "level": 2,
+        "power": "Now You Don't",
+        "activation_cost": "Reaction after teleport",
+        "duration": "Instant",
+        "range": "5ft behind enemy",
+        "uses": "2/day",
+        "effect": "Attack after teleporting behind a target (no action, no -5 to Called Shot/Strike that turn)."
+      },
+      {
+        "level": 2,
+        "power": "Meshing",
+        "activation_cost": "1 Action",
+        "duration": "Instant",
+        "range": "5ft",
+        "uses": "2/day",
+        "effect": "Shove adjacent target into object (opposed Con roll); target suffocates and takes growing damage."
+      },
+      {
+        "level": 3,
+        "power": "Displace",
+        "activation_cost": "1 Action (combat), At Will (non-combat)",
+        "duration": "1 round/3 sec",
+        "range": "Blink range",
+        "uses": "Unlimited",
+        "effect": "Open portal to perform an action at distance you can see."
+      },
+      {
+        "level": 3,
+        "power": "Sonar",
+        "activation_cost": "Passive",
+        "duration": "N/A",
+        "range": "Touch",
+        "uses": "N/A",
+        "effect": "Touch wall/floor to sense all solid objects in this and adjacent room."
+      },
+      {
+        "level": 3,
+        "power": "Oscillation",
+        "activation_cost": "2 Actions",
+        "duration": "Concentration",
+        "range": "Self",
+        "uses": "2/day",
+        "effect": "+7 AR, create 2 images; missed attacks Confuse attacker."
+      },
+      {
+        "level": 3,
+        "power": "Long Jump",
+        "activation_cost": "Passive",
+        "duration": "N/A",
+        "range": "Self",
+        "uses": "N/A",
+        "effect": "Blink distance increases by 5ft for each power in Teleportation."
+      },
+      {
+        "level": 4,
+        "power": "Bungee",
+        "activation_cost": "1 Action (combat), At Will (non-combat)",
+        "duration": "Instant",
+        "range": "Distance of last teleport",
+        "uses": "Powers in Teleportation ÷ 3 per day",
+        "effect": "Teleport back to your last position within 6 sec (2 rounds)."
+      },
+      {
+        "level": 4,
+        "power": "Phase",
+        "activation_cost": "Reaction",
+        "duration": "N/A",
+        "range": "Self",
+        "uses": "Uses Meld's uses",
+        "effect": "Activate Meld instantly; immune to ballistic/kinetic/vibro weapons. +1 AR per 3 powers."
+      },
+      {
+        "level": 4,
+        "power": "Pass Me That",
+        "activation_cost": "2 Actions",
+        "duration": "Instant",
+        "range": "Blink range",
+        "uses": "Unlimited",
+        "effect": "Teleport small inanimate objects. With Meshing: teleport object inside a target for 2d8 ignoring AR."
+      },
+      {
+        "level": 4,
+        "power": "Jumper",
+        "activation_cost": "At Will",
+        "duration": "Instant",
+        "range": "Planet-wide",
+        "uses": "Once to go and once to return",
+        "effect": "Teleport anywhere on a planet (need image/name/idea of destination; not usable in combat)."
+      },
+      {
+        "level": 4,
+        "power": "Take Me There",
+        "activation_cost": "At Will",
+        "duration": "Instant",
+        "range": "1 mile",
+        "uses": "Dexterity per day",
+        "effect": "Teleport yourself and willing targets/objects up to 1 mile. (not in combat)"
+      },
+      {
+        "level": 5,
+        "power": "Get Us Out of Here",
+        "activation_cost": "At Will",
+        "duration": "Instant",
+        "range": "N/A",
+        "uses": "Once every 2 days",
+        "effect": "Teleport self, all allies, and a ship or large object to any known location (uses all powers, see full rules)."
+      }
+    ]
+  }
+]

@@ -9,6 +9,8 @@ const pdfViewer = document.getElementById('pdfViewer')
 const downloadBtn = document.getElementById('downloadContent')
 const modalContent = document.getElementById('modalContent');
 const pdfContainer = document.getElementById('pdfContainer');
+const textBasedBtn = document.getElementById('textbased');
+
 //Pdf to show
 const previewPdfPath = 'data/InfiniteAgesGenesis.pdf'
 
@@ -184,3 +186,7 @@ setTimeout(function() {
     fiveSecondUpdate = false;  // After 5 seconds, only update if the number changes
 }, 100);
  
+
+textBasedBtn.addEventListener('click', () => {
+  window.location.href = 'textbasedrpg/game.html';
+});
