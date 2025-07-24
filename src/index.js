@@ -12,7 +12,7 @@ const pdfContainer = document.getElementById('pdfContainer');
 const textBasedBtn = document.getElementById('textbased');
 
 //Pdf to show
-const previewPdfPath = 'data/InfiniteAgesGenesis.pdf'
+const previewPdfPath = '../public/data/InfiniteAgesGenesis.pdf'
 
 // check if mobile 
 function isMobileDevice() {
@@ -188,5 +188,5 @@ setTimeout(function() {
  
 
 textBasedBtn.addEventListener('click', () => {
-  window.location.href = 'textbasedrpg/game.html';
+  window.location.href = '../public/textbasedrpg/game.html';
 });
